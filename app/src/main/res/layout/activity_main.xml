@@ -8,29 +8,84 @@
         tools:context=".MainActivity">
 
     <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateView" android:textSize="24sp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="56dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp" android:text="00:00:00"/>
+    <TextView
             android:text="数量"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"/>
-    <TextView
-            android:text="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/countText" android:textSize="24sp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toStartOf="@+id/plusbutton" android:layout_marginEnd="40dp"/>
-    <Button
-            android:text="-"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/minusbutton" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="6dp"/>
+            android:id="@+id/textView1" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/dateView" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:textSize="24sp"/>
     <Button
             android:text="+"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/plusbutton" app:layout_constraintEnd_toStartOf="@+id/minusbutton" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="6dp"/>
+            android:id="@+id/plusbutton" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="6dp" app:layout_constraintEnd_toStartOf="@+id/minusbutton"
+            android:layout_marginEnd="6dp"/>
+    <Button
+            android:text="-"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/minusbutton"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="6dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="7dp"/>
+    <TextView
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/counttext" android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/plusbutton"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toEndOf="@+id/textView1"
+            android:layout_marginStart="8dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+            android:text="追加"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/addbutton" android:layout_marginEnd="24dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="4dp" app:layout_constraintTop_toBottomOf="@+id/plusbutton"/>
+    <Button
+            android:text="クリア"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clearbutton" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="8dp"/>
+    <Button
+            android:text="選択された合計数量"
+            android:layout_width="272dp"
+            android:layout_height="48dp"
+            android:id="@+id/sumbutton" android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintStart_toEndOf="@+id/clearbutton"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="368dp"
+            android:layout_height="333dp" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/clearbutton" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/addbutton" android:id="@+id/linearLayout">
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/mylistview"/>
+    </LinearLayout>
+    <EditText
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:inputType="text|textPersonName"
+            android:ems="10"
+            android:id="@+id/commenttext" android:layout_marginTop="50dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="コメント" android:textAlignment="viewStart" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/counttext" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@+id/addbutton"/>
+
 </android.support.constraint.ConstraintLayout>
+
+
